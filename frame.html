@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Frame Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <div class="frame-container">
+            <!-- Frame with Image Inside -->
+            <div id="frame" class="frame">
+                <img id="bannerImage" src="your-image.jpg" alt="Image with Frame">
+            </div>
+        </div>
+
+        <!-- Frame Options -->
+        <div class="frame-options">
+            <h3>Select Frame Style</h3>
+            <button onclick="changeFrame('dotted')">Dotted Frame</button>
+            <button onclick="changeFrame('solid')">Solid Frame</button>
+            <button onclick="changeFrame('double')">Double Frame</button>
+            <button onclick="changeFrame('groove')">Groove Frame</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
