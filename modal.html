@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>2017</h2>
+      <p>Birds are a unique and captivating group of animals, distinguished by their feathers, wings, and beaks. They belong to the class Aves and are found in nearly every habitat on Earth, from dense rainforests to arid deserts, icy polar regions, and bustling urban areas. Known for their ability to fly, birds possess various adaptations—such as lightweight bones and powerful chest muscles—that enable flight. However, some species, like ostriches, penguins, and kiwis, have evolved to thrive without flight, showcasing the incredible diversity and adaptability within the bird world.
+        Birds play crucial roles in ecosystems, serving as pollinators, seed dispersers, and predators that help control insect populations. Their melodic songs, colorful plumage, and fascinating behaviors have made them symbols of beauty and freedom across cultures. Observing birds also offers insights into environmental health, as many bird species are highly sensitive to changes in their habitats. As such, birds are not only essential to natural systems but also beloved subjects of study and admiration worldwide.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2016</h2>
+      <p>Flowers are nature’s vibrant and delicate creations, known for their beauty, variety, and important ecological roles. They are the reproductive structures of flowering plants, or angiosperms, and have evolved a multitude of shapes, colors, and fragrances to attract pollinators like bees, butterflies, and birds. Found in every corner of the world, flowers adapt to various climates and ecosystems, from towering sunflowers in sunny fields to tiny alpine blooms in mountainous terrain.
+        Flowers are essential to plant reproduction, producing seeds that grow into new plants and thereby sustaining biodiversity. They also play a vital role in food chains, as they produce nectar and pollen, which are critical food sources for numerous insects and animals. Beyond their ecological significance, flowers hold cultural importance, symbolizing love, beauty, renewal, and even resilience across societies. Their timeless appeal has made them a central element in art, literature, and rituals, capturing human fascination through the ages..</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2015</h2>
+      <p>Books are timeless vessels of knowledge, imagination, and culture, allowing ideas and stories to transcend generations and geographical boundaries. They come in various forms and genres—fiction, non-fiction, poetry, reference, and more—each offering readers a unique experience, from escapist adventures to practical wisdom. Since the invention of the printing press in the 15th century, books have become widely accessible, transforming societies by fostering literacy, preserving history, and encouraging the spread of new ideas.
+        Books are more than just pages bound together; they are portals into different worlds, perspectives, and eras. For centuries, they have documented human thought, serving as powerful tools for learning, inspiration, and empathy. Whether read for knowledge or pleasure, books remain integral to personal growth and cultural exchange, shaping both individuals and entire societies. Their enduring relevance is a testament to the profound impact that the written word can have on human lives.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2012</h2>
+      <p>A pen is a writing instrument that has been a cornerstone of communication and creativity for centuries. It allows us to capture thoughts, record history, and express ideas in a tangible, lasting form. From ancient reed pens and quills to modern ballpoints and fountain pens, the evolution of the pen reflects humanity’s ingenuity in creating tools that enhance everyday life.
+        Pens come in a variety of types, each designed for specific purposes and preferences. Fountain pens offer a smooth, elegant writing experience, while ballpoint and gel pens provide practicality and durability. The pen’s simplicity and accessibility have made it a universal symbol of knowledge, expression, and learning. Whether used for writing, drawing, or signing important documents, the pen remains an essential tool in the realms of art, education, and business. Its impact is immeasurable, as it continues to bridge thoughts and ideas between people and across generations..</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2011</h2>
+      <p>Google Chrome is a popular web browser developed by Google, known for its speed, simplicity, and robust features. First released in 2008, Chrome quickly gained popularity for its minimalist design and strong performance, setting it apart from other browsers. It is based on the open-source Chromium project and is available across multiple operating systems, including Windows, macOS, Linux, Android, and iOS.
+        Chrome's success stems from its commitment to user experience and its suite of features, such as seamless syncing across devices, an extensive library of extensions, and built-in tools for privacy and security. The browser includes tools like an integrated password manager, tab management, and incognito mode, making it versatile for both personal and professional use. With regular updates and support for the latest web standards, Chrome has become a go-to choice for millions of users worldwide and has influenced the development of other browsers in terms of design and functionality..</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2007</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
